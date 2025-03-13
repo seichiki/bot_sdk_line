@@ -1,0 +1,14 @@
+[workspace]
+resolver = "2"
+members = [
+    "line_channel_access_token",
+    "line_insight",
+    "lib",
+    "line_liff",
+    "line_manage_audience",
+    "line_messaging_api",
+    "line_module",
+    "line_module_attach",
+    "line_shop",
+    "line_webhook",
+]

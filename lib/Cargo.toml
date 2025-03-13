@@ -1,0 +1,49 @@
+[package]
+name = "line_bot_sdk_rust"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+base64 = "0.22.1"
+hmac = "0.12.1"
+hyper = "1.6.0"
+hyper-tls = "0.6.0"
+hyper-util = "0.1.10"
+sha2 = "0.10.8"
+
+
+[dependencies.line-channel-access-token]
+version = "0.0.1"
+path = "../line_channel_access_token"
+
+[dependencies.line-insight]
+version = "0.0.1"
+path = "../line_insight"
+
+[dependencies.line-liff]
+version = "1.0.0"
+path = "../line_liff"
+
+[dependencies.line-manage-audience]
+version = "0.0.1"
+path = "../line_manage_audience"
+
+[dependencies.line-messaging-api]
+version = "0.0.1"
+path = "../line_messaging_api"
+
+[dependencies.line-module]
+version = "0.0.1"
+path = "../line_module"
+
+[dependencies.line-module-attach]
+version = "0.0.1"
+path = "../line_module_attach"
+
+[dependencies.line-shop]
+version = "0.0.1"
+path = "../line_shop"
+
+[dependencies.line-webhook]
+version = "1.0.0"
+path = "../line_webhook"
