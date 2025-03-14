@@ -15,7 +15,7 @@ impl<Err: ErrorRenderer> FromRequest<Err> for Signature {
     type Error = error::Error;
 
     async fn from_request(req: &HttpRequest, _payload: &mut Payload) -> Result<Self, Self::Error> {
-        let res = if let Some(x_line_signature) = req.headers().get("x-line-signature") {
+        if let Some(x_line_signature) = req.headers().get("x-line-signature") {
             if let Ok(key) = x_line_signature.to_str() {
                 Ok(Signature {
                     key: key.to_string(),
@@ -25,7 +25,6 @@ impl<Err: ErrorRenderer> FromRequest<Err> for Signature {
             }
         } else {
             Err(ErrorBadRequest("x-line-signature is missing").into())
-        };
-        res
+        }
     }
 }
