@@ -1,7 +1,36 @@
-use base64::{engine::general_purpose, Engine as _};
+/*
+* Copyright 2023 nanato12
+*
+* Licensed under the Apache License, Version 2.0 (the "License");
+* you may not use this file except in compliance with the License.
+* You may obtain a copy of the License at
+*
+*     http://www.apache.org/licenses/LICENSE-2.0
+*
+* Unless required by applicable law or agreed to in writing, software
+* distributed under the License is distributed on an "AS IS" BASIS,
+* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+* See the License for the specific language governing permissions and
+* limitations under the License.
+*/
+
+//! Functions for parser
+
+use base64::{Engine as _, engine::general_purpose};
 use hmac::{Hmac, Mac};
 use sha2::Sha256;
 
+/// Signature validator
+/// # Note
+/// The signature in the `x-line-signature` request header must be verified to confirm that the request was sent from the LINE Platform. [\[detail\]](https://developers.line.biz/en/reference/messaging-api/#signature-validation)
+/// # Example
+/// ```
+/// if validate_signature(channel_secret, signature, body) {
+///     // OK
+/// } else {
+///     // NG
+/// }
+/// ```
 pub fn validate_signature(channel_secret: &str, signature: &str, body: &str) -> bool {
     type HmacSha256 = Hmac<Sha256>;
 

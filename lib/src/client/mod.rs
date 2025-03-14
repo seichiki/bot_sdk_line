@@ -1,33 +1,48 @@
+/*
+* Copyright 2023 nanato12
+*
+* Licensed under the Apache License, Version 2.0 (the "License");
+* you may not use this file except in compliance with the License.
+* You may obtain a copy of the License at
+*
+*     http://www.apache.org/licenses/LICENSE-2.0
+*
+* Unless required by applicable law or agreed to in writing, software
+* distributed under the License is distributed on an "AS IS" BASIS,
+* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+* See the License for the specific language governing permissions and
+* limitations under the License.
+*/
+
 use std::sync::Arc;
 
-use hyper_util::{client::legacy::Client, rt::TokioExecutor};
-use hyper_util::client::legacy::connect::HttpConnector;
 use hyper_tls::HttpsConnector;
+use hyper_util::client::legacy::connect::HttpConnector;
+use hyper_util::{client::legacy::Client, rt::TokioExecutor};
 
 use line_channel_access_token::apis::{
-    configuration::Configuration as ChannelAccessTokenApiConfiguration, ChannelAccessTokenApiClient,
+    ChannelAccessTokenApiClient, configuration::Configuration as ChannelAccessTokenApiConfiguration,
 };
-use line_insight::apis::{configuration::Configuration as InsightConfiguration, InsightApiClient};
-use line_liff::apis::{configuration::Configuration as LiffConfiguration, LiffApiClient};
+use line_insight::apis::{InsightApiClient, configuration::Configuration as InsightConfiguration};
+use line_liff::apis::{LiffApiClient, configuration::Configuration as LiffConfiguration};
 use line_manage_audience::apis::{
-    configuration::Configuration as ManageAudienceConfiguration, ManageAudienceApiClient,
+    ManageAudienceApiClient, configuration::Configuration as ManageAudienceConfiguration,
 };
 use line_messaging_api::apis::{
-    configuration::Configuration as MessagingApiConfiguration, MessagingApiApiClient,
+    MessagingApiApiClient, configuration::Configuration as MessagingApiConfiguration,
 };
 use line_module::apis::{
-    configuration::Configuration as LineModuleConfiguration, LineModuleApiClient,
+    LineModuleApiClient, configuration::Configuration as LineModuleConfiguration,
 };
 use line_module_attach::apis::{
-    configuration::Configuration as LineModuleAttachConfiguration, LineModuleAttachApiClient,
+    LineModuleAttachApiClient, configuration::Configuration as LineModuleAttachConfiguration,
 };
-use line_shop::apis::{configuration::Configuration as ShopConfiguration, ShopApiClient};
+use line_shop::apis::{ShopApiClient, configuration::Configuration as ShopConfiguration};
 use line_webhook::apis::{
-    configuration::Configuration as WebhookConfiguration, DummyApiClient as WebhookDummyApiClient,
+    DummyApiClient as WebhookDummyApiClient, configuration::Configuration as WebhookConfiguration,
 };
 
-type Connector= HttpsConnector<HttpConnector>;
-
+type Connector = HttpsConnector<HttpConnector>;
 
 pub struct LINE {
     pub channel_access_token_api_client: ChannelAccessTokenApiClient<Connector>,
@@ -63,7 +78,8 @@ impl LINE {
         let liff_api_client = LiffApiClient::new(Arc::new(liff_conf));
 
         // manage_audience
-        let mut manage_audience_conf = ManageAudienceConfiguration::<Connector>::new(client.clone());
+        let mut manage_audience_conf =
+            ManageAudienceConfiguration::<Connector>::new(client.clone());
         manage_audience_conf.oauth_access_token = Some(token.to_owned());
         let manage_audience_api_client =
             ManageAudienceApiClient::new(Arc::new(manage_audience_conf));
@@ -79,7 +95,8 @@ impl LINE {
         let module_api_client = LineModuleApiClient::new(Arc::new(module_conf));
 
         // module_attach
-        let mut module_attach_conf = LineModuleAttachConfiguration::<Connector>::new(client.clone());
+        let mut module_attach_conf =
+            LineModuleAttachConfiguration::<Connector>::new(client.clone());
         module_attach_conf.oauth_access_token = Some(token.to_owned());
         let module_attach_api_client = LineModuleAttachApiClient::new(Arc::new(module_attach_conf));
 
@@ -106,7 +123,7 @@ impl LINE {
         }
     }
 
-    fn create_hyper_client() -> Client<Connector,String> {
+    fn create_hyper_client() -> Client<Connector, String> {
         let https = HttpsConnector::new();
         Client::builder(TokioExecutor::new())
             .pool_idle_timeout(std::time::Duration::from_secs(60))
