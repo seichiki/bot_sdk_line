@@ -1505,6 +1505,7 @@ dependencies = [
  "ntex",
  "rocket",
  "sha2",
+ "xitca-web",
 ]
 
 [[package]]
@@ -3340,6 +3341,72 @@ name = "writeable"
 version = "0.5.5"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "1e9df38ee2d2c3c5948ea468a8406ff0db0b29ae1ffde1bcf20ef305bcc95c51"
+
+[[package]]
+name = "xitca-http"
+version = "0.7.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "ed42227e2d6efd459268d4ed975f7a92ec0a9bbc2f99b6bcea373824e87e5a97"
+dependencies = [
+ "futures-core",
+ "http 1.3.1",
+ "httpdate",
+ "pin-project-lite",
+ "socket2",
+ "tracing",
+ "xitca-io",
+ "xitca-router",
+ "xitca-service",
+ "xitca-unsafe-collection",
+]
+
+[[package]]
+name = "xitca-io"
+version = "0.4.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "19b91b7a5ff9e3bed167b7e3bcc7b4462d2cb16d05e3ae913dbc384e463fdd7f"
+dependencies = [
+ "bytes",
+ "xitca-unsafe-collection",
+]
+
+[[package]]
+name = "xitca-router"
+version = "0.3.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "35a771113f381c9a2f5ae1096b70d629ed241a1a473304ea902258c3d528f536"
+dependencies = [
+ "xitca-unsafe-collection",
+]
+
+[[package]]
+name = "xitca-service"
+version = "0.3.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "c7f9f7ff163aa7a466a40c6ee92571cbfba705f295bff4412854189454c54ed7"
+
+[[package]]
+name = "xitca-unsafe-collection"
+version = "0.2.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "467b95b08735dcd7061be626d02aea062bc0b99918bc9de11b8fc15d901158ae"
+dependencies = [
+ "bytes",
+]
+
+[[package]]
+name = "xitca-web"
+version = "0.7.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "fb65a52a0a51ca0bd70c8d5afcc0b8bb1928dcf85ab5752ff1d78463647d6b3b"
+dependencies = [
+ "futures-core",
+ "pin-project-lite",
+ "tokio",
+ "xitca-http",
+ "xitca-service",
+ "xitca-unsafe-collection",
+]
 
 [[package]]
 name = "yansi"

@@ -22,3 +22,8 @@ pub mod actix;
 
 #[cfg(feature = "ntex_support")]
 pub mod ntex;
+
+#[cfg(feature = "xitca_support")]
+pub mod XitcaError;
+#[cfg(feature = "xitca_support")]
+pub mod xitca;
