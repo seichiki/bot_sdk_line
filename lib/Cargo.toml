@@ -7,6 +7,7 @@ edition = "2024"
 default = []
 rocket_support = ["rocket"]
 actix_support = ["actix-web"]
+ntex_support = ["ntex"]
 
 [dependencies]
 base64 = "0.22.1"
@@ -22,6 +23,11 @@ optional = true
 default-features = false
 
 [dependencies.actix-web]
+version = "*"
+optional = true
+default-features = false
+
+[dependencies.ntex]
 version = "*"
 optional = true
 default-features = false
