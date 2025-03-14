@@ -3,6 +3,11 @@ name = "line_bot_sdk_rust"
 version = "0.1.0"
 edition = "2024"
 
+[features]
+default = []
+rocket_support = ["rocket"]
+actix_support = ["actix-web"]
+
 [dependencies]
 base64 = "0.22.1"
 hmac = "0.12.1"
@@ -11,6 +16,15 @@ hyper-tls = "0.6.0"
 hyper-util = "0.1.10"
 sha2 = "0.10.8"
 
+[dependencies.rocket]
+version = "*"
+optional = true
+default-features = false
+
+[dependencies.actix-web]
+version = "*"
+optional = true
+default-features = false
 
 [dependencies.line-channel-access-token]
 version = "0.0.1"
