@@ -20,4 +20,5 @@ pub mod rocket;
 #[cfg(feature = "actix_support")]
 pub mod actix;
 
+#[cfg(feature = "ntex_support")]
 pub mod ntex;
