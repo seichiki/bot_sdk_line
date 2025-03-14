@@ -7,7 +7,6 @@ edition = "2024"
 default = []
 rocket_support = ["rocket"]
 actix_support = ["actix-web"]
-ntex_support = ["ntex"]
 
 [dependencies]
 base64 = "0.22.1"
@@ -29,7 +28,7 @@ default-features = false
 
 [dependencies.ntex]
 version = "2"
-optional = true
+optional = false
 default-features = false
 
 [dependencies.line-channel-access-token]
