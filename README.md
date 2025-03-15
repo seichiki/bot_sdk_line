@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This is a maintained version of [nanato12/line-bot-sdk-rust](https://github.com/nanato12/line-bot-sdk-rust) with more complete api, newer versions of dependencies and more additional features.
+This is a library originating from [nanato12/line-bot-sdk-rust](https://github.com/nanato12/line-bot-sdk-rust), but with more complete api, newer versions of dependencies and more additional features.
 
 The LINE Messaging API SDK for Rust makes it easy to develop bots using LINE Messaging API, and you can create a sample bot within minutes.
 
