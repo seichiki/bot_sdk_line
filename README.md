@@ -1,4 +1,4 @@
-# LINE Messaging API SDK for Rust
+# LineBotSdkRust
 
 ## Introduction
 
