@@ -158,8 +158,8 @@ match request {
 
 ## Bot Examples
 
-* EchoBot: [LineBotSdkExample](https://github.com/Kayxue/LineBotSdkExample)
-* [GitHubPushWebhookLineBotRust](https://github.com/Kayxue/GitHubPushWebhookLineBotRust)
+* [LineBotSdkExample](https://github.com/Kayxue/LineBotSdkExample): Some examples of using this Rust library.
+* [GitHubPushWebhookLineBotRust](https://github.com/Kayxue/GitHubPushWebhookLineBotRust): Line bot for sending GitHub push webhook to Line, but in Rust
 
 ## Contributing
 Contributions are welcome! And please follow [Code of Conduct](https://www.rust-lang.org/policies/code-of-conduct).
