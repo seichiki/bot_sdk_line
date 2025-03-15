@@ -135,6 +135,14 @@ For example, parse body (`&str`) into Result<CallbackRequest, serde_json::Error>
 let request: Result<CallbackRequest, serde_json::Error> = serde_json::from_str(body);
 ```
 
+Or directly parse body from `bytes` body.
+
+```rust
+let request: Result<CallbackRequest, serde_json::Error> = serde_json::from_slice(&bytes);
+```
+
+Then:
+
 ```rust
 match request {
     Err(err) => {
