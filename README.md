@@ -24,7 +24,7 @@ Cargo: Coming soon
 Git: Add content below to your `Cargo.toml`
 
 ```toml
-[dependencies.line_bot_sdk_rust]
+[dependencies.bot_sdk_line]
 git = "https://github.com/Kayxue/LineBotSdkRust.git"
 branch = "master"
 ```
@@ -36,13 +36,13 @@ Extract `x-line-signature` from the request header.
 ### Use `rocket` framework
 
 ```toml
-[dependencies.line_bot_sdk_rust]
+[dependencies.bot_sdk_line]
 ...
 features = ["rocket_support"]
 ```
 
 ```rust
-use line_bot_sdk_rust::support::rocket::Signature;
+use bot_sdk_line::support::rocket::Signature;
 use rocket::{http::Status, post};
 
 #[post("/callback", data = "<body>")]
@@ -54,14 +54,14 @@ async fn world(signature: Signature, body: String) -> (Status, &'static str) {
 ### Use `actix_web` framework
 
 ```toml
-[dependencies.line_bot_sdk_rust]
+[dependencies.bot_sdk_line]
 ...
 features = ["actix_support"]
 ```
 
 ```rust
 use actix_web::{post, web, Error, HttpResponse};
-use line_bot_sdk_rust::support::actix::Signature;
+use bot_sdk_line::support::actix::Signature;
 
 #[post("/callback")]
 async fn callback(signature: Signature, bytes: web::Bytes) -> Result<HttpResponse, Error> {
@@ -72,7 +72,7 @@ async fn callback(signature: Signature, bytes: web::Bytes) -> Result<HttpRespons
 ### Use `ntex` framework (Additional Support)
 
 ```toml
-[dependencies.line_bot_sdk_rust]
+[dependencies.bot_sdk_line]
 ...
 features = ["ntex_support"]
 ```
@@ -82,7 +82,7 @@ use ntex::{
     util::Bytes,
     web::{Responder, WebResponseError, post},
 };
-use line_bot_sdk_rust::support::ntex::Signature;
+use bot_sdk_line::support::ntex::Signature;
 
 #[post("/callback")]
 async fn callback(
@@ -96,14 +96,14 @@ async fn callback(
 ### Use `xitca-web` framework (Additional Support)
 
 ```toml
-[dependencies.line_bot_sdk_rust]
+[dependencies.bot_sdk_line]
 ...
 features = ["xitca_support"]
 ```
 
 ```rust
 use xitca_web::{bytes::Bytes, codegen::route, error::Error};
-use line_bot_sdk_rust::support::xitca::Signature;
+use bot_sdk_line::support::xitca::Signature;
 
 #[route("/callback",method = post)]
 async fn callback(signature: Signature<'_>, bytes: Bytes) -> Result<&'static str, Error> {
@@ -114,7 +114,7 @@ async fn callback(signature: Signature<'_>, bytes: Bytes) -> Result<&'static str
 ## Configuration
 
 ```rust
-use line_bot_sdk_rust::client::LINE;
+use bot_sdk_line::client::LINE;
 use std::env;
 
 fn main() {
