@@ -1,5 +1,5 @@
 [package]
-name = "line_bot_sdk_rust"
+name = "line_sdk_rust"
 version = "0.1.0"
 edition = "2024"
 license = "Apache-2.0"
