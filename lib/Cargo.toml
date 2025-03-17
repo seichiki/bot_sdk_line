@@ -43,38 +43,38 @@ version = "*"
 optional = true
 default-features = false
 
-[dependencies.line-channel-access-token]
+[dependencies.channel-access-token]
 version = "0.0.1"
-path = "../line_channel_access_token"
+path = "../channel_access_token"
 
-[dependencies.line-insight]
+[dependencies.insight]
 version = "0.0.1"
-path = "../line_insight"
+path = "../insight"
 
-[dependencies.line-liff]
+[dependencies.liff]
 version = "1.0.0"
-path = "../line_liff"
+path = "../liff"
 
-[dependencies.line-manage-audience]
+[dependencies.manage-audience]
 version = "0.0.1"
-path = "../line_manage_audience"
+path = "../manage_audience"
 
-[dependencies.line-messaging-api]
+[dependencies.messaging-api]
 version = "0.0.1"
-path = "../line_messaging_api"
+path = "../messaging_api"
 
-[dependencies.line-module]
+[dependencies.module]
 version = "0.0.1"
-path = "../line_module"
+path = "../module"
 
-[dependencies.line-module-attach]
+[dependencies.module-attach]
 version = "0.0.1"
-path = "../line_module_attach"
+path = "../module_attach"
 
-[dependencies.line-shop]
+[dependencies.shop]
 version = "0.0.1"
-path = "../line_shop"
+path = "../shop"
 
-[dependencies.line-webhook]
+[dependencies.webhook]
 version = "1.0.0"
-path = "../line_webhook"
+path = "../webhook"
