@@ -1,5 +1,5 @@
 [package]
-name = "shop"
+name = "shop-line"
 version = "0.0.1"
 authors = ["OpenAPI Generator team and contributors"]
 description = "This document describes LINE Mission Stickers API."

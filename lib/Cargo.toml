@@ -1,5 +1,5 @@
 [package]
-name = "line_sdk_rust"
+name = "bot_sdk_line"
 version = "0.1.0"
 edition = "2024"
 license = "Apache-2.0"
@@ -43,38 +43,38 @@ version = "*"
 optional = true
 default-features = false
 
-[dependencies.channel-access-token]
+[dependencies.channel-access-token-line]
 version = "0.0.1"
 path = "../channel_access_token"
 
-[dependencies.insight]
+[dependencies.insight-line]
 version = "0.0.1"
 path = "../insight"
 
-[dependencies.liff]
+[dependencies.liff-line]
 version = "1.0.0"
 path = "../liff"
 
-[dependencies.manage-audience]
+[dependencies.manage-audience-line]
 version = "0.0.1"
 path = "../manage_audience"
 
-[dependencies.messaging-api]
+[dependencies.messaging-api-line]
 version = "0.0.1"
 path = "../messaging_api"
 
-[dependencies.module]
+[dependencies.module-line]
 version = "0.0.1"
 path = "../module"
 
-[dependencies.module-attach]
+[dependencies.module-attach-line]
 version = "0.0.1"
 path = "../module_attach"
 
-[dependencies.shop]
+[dependencies.shop-line]
 version = "0.0.1"
 path = "../shop"
 
-[dependencies.webhook]
+[dependencies.webhook-line]
 version = "1.0.0"
 path = "../webhook"

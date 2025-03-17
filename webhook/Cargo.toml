@@ -1,5 +1,5 @@
 [package]
-name = "webhook"
+name = "webhook-line"
 version = "1.0.0"
 authors = ["OpenAPI Generator team and contributors"]
 description = "Webhook event definition of the LINE Messaging API"

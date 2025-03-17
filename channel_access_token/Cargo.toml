@@ -1,5 +1,5 @@
 [package]
-name = "channel-access-token"
+name = "channel-access-token-line"
 version = "0.0.1"
 authors = ["OpenAPI Generator team and contributors"]
 description = "This document describes Channel Access Token API."

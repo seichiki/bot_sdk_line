@@ -1,5 +1,5 @@
 [package]
-name = "liff"
+name = "liff-line"
 version = "1.0.0"
 authors = ["OpenAPI Generator team and contributors"]
 description = "LIFF Server API."
