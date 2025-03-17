@@ -20,25 +20,25 @@ use hyper_tls::HttpsConnector;
 use hyper_util::client::legacy::connect::HttpConnector;
 use hyper_util::{client::legacy::Client, rt::TokioExecutor};
 
-use line_channel_access_token::apis::{
+use channel_access_token_line::apis::{
     ChannelAccessTokenApiClient, configuration::Configuration as ChannelAccessTokenApiConfiguration,
 };
-use line_insight::apis::{InsightApiClient, configuration::Configuration as InsightConfiguration};
-use line_liff::apis::{LiffApiClient, configuration::Configuration as LiffConfiguration};
-use line_manage_audience::apis::{
+use insight_line::apis::{InsightApiClient, configuration::Configuration as InsightConfiguration};
+use liff_line::apis::{LiffApiClient, configuration::Configuration as LiffConfiguration};
+use manage_audience_line::apis::{
     ManageAudienceApiClient, configuration::Configuration as ManageAudienceConfiguration,
 };
-use line_messaging_api::apis::{
+use messaging_api_line::apis::{
     MessagingApiApiClient, configuration::Configuration as MessagingApiConfiguration,
 };
-use line_module::apis::{
-    LineModuleApiClient, configuration::Configuration as LineModuleConfiguration,
-};
-use line_module_attach::apis::{
+use module_attach_line::apis::{
     LineModuleAttachApiClient, configuration::Configuration as LineModuleAttachConfiguration,
 };
-use line_shop::apis::{ShopApiClient, configuration::Configuration as ShopConfiguration};
-use line_webhook::apis::{
+use module_line::apis::{
+    LineModuleApiClient, configuration::Configuration as LineModuleConfiguration,
+};
+use shop_line::apis::{ShopApiClient, configuration::Configuration as ShopConfiguration};
+use webhook_line::apis::{
     DummyApiClient as WebhookDummyApiClient, configuration::Configuration as WebhookConfiguration,
 };
 
