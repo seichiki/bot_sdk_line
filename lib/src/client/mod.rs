@@ -16,6 +16,8 @@
 
 use std::sync::Arc;
 
+use http_body_util::Full;
+use hyper::body::Bytes;
 use hyper_tls::HttpsConnector;
 use hyper_util::client::legacy::connect::HttpConnector;
 use hyper_util::{client::legacy::Client, rt::TokioExecutor};
@@ -133,11 +135,11 @@ impl LINE {
         }
     }
 
-    fn create_hyper_client() -> Client<Connector, String> {
+    fn create_hyper_client() -> Client<Connector, Full<Bytes>> {
         let https = HttpsConnector::new();
         Client::builder(TokioExecutor::new())
             .pool_idle_timeout(std::time::Duration::from_secs(60))
             .pool_max_idle_per_host(10)
-            .build::<_, String>(https)
+            .build::<_, Full<Bytes>>(https)
     }
 }
