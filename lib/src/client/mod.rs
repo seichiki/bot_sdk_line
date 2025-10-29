@@ -96,6 +96,7 @@ impl LINE {
         // messaging_api_blob
         let mut messaging_api_blob_conf =
             MessagingApiConfiguration::<Connector>::new(client.clone());
+        messaging_api_blob_conf.base_path = "https://api-data.line.me".to_owned();
         messaging_api_blob_conf.oauth_access_token = Some(token.to_owned());
         let messaging_api_blob_client =
             MessagingApiBlobApiClient::new(Arc::new(messaging_api_blob_conf));
